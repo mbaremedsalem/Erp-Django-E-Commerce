@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block body %}
+    <div class="mobile-menu">
+        <div id="mySidenav" class="sidenav">
+            <a href="https://websolutionus.com/cc/servicetop"><img src="backend/images/logo/logo.png" alt=""></a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <ul>
+                                                            <li><a href="https://websolutionus.com/cc/servicetop">Home</a>
+                        </li>
+                                            
+                    <li><a href="about-us.html">About Us</a>
+                    </li>
+
+                                    
+                    <li><a href="experts.html">Experts</a>
+                    </li>
+
+                                    
+                    <li><a href="faq.html">FAQ</a>
+                    </li>
+
+                                    
+                    <li><a href="blog.html">Blog</a>
+                    </li>
+
+                                    
+                    <li><a href="contact-us.html">Contact Us</a>
+                    </li>
+
+                
+              
+                                                    <li><a href="user/login.html">Login</a></li>
+                    <li><a href="user/register.html">Register</a></li>
+                            </ul>
+
+            
+        </div>
+    </div>
+    <!--Mobile Menu End-->
+
+    <!--Menu End-->
+
+               
+            <!--Banner Start-->
+           
+<div class="banner-area flex" >
+    <img src="{% static 'frontend/images/613.png' %}" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-text">
+                    <h1>Experts</h1>
+                    <ul>
+                        <li><a href="{% url 'experts:expert_list'%}">Home</a></li>
+                        <li><span>Experts</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Banner End-->       
+       
+        
+
+                     <!--Service Start-->
+    <div class="team-page pt_30 pb_60">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                                    <div class="col-lg-6 col-md-4 col-12 mt_30">
+                        <div class="team-item">
+                            <div class="team-photo">
+                                <img src="{{profile.user.image.url}}" alt="Team Photo">
+                            </div>
+                            <div class="team-text">
+                               
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% bootstrap_form userform %}
+                                    {% bootstrap_form profileform %}
+                                    {% buttons %}
+                                        <button type="submit" class="btn btn-primary w-100">save</button>
+                                    {% endbuttons %} 
+                        
+                               </form>       
+                                <p>
+                                
+
+                                                                                  <i class="fas fa-star text-warning"></i>
+                                              <i class="far fa-star"></i>
+                                              <i class="far fa-star"></i>
+                                              <i class="far fa-star"></i>
+                                              <i class="far fa-star"></i>
+                                            
+                                        
+
+
+                                
+                                </p>
+                            </div>
+                                                        <div class="team-social">
+                                <ul>
+                                                                        <li><a href="http://www.facebok.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                                                                                             <li><a href="http://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                                                                                                            <li><a href="http://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+                                                                    </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                   
+            </div>
+        </div>
+    </div>
+    <!--Service End-->
+{% endblock body %}
+
+
+
+        
+    
+

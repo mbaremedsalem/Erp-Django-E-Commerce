@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% load static %}
+
+{% load bootstrap4 %}
+<br><br><br><br><br><br>
+        <main class="main main-test">
+            <div class="container checkout-container">
+               
+
+               
+
+                
+
+                <div class="row">
+                    <div class="col-lg-7">
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                    <!-- End .col-lg-8 -->
+
+                    <!-- End .col-lg-4 -->
+                </div>
+                <!-- End .row -->
+            </div>
+            <!-- End .container -->
+        </main>
+        <!-- End .main -->
+{% endblock body %} 
+   
